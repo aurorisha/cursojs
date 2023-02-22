@@ -66,41 +66,41 @@ const comprobarCantidad = (cantidad) => { //El cantidad de aqui es un parametro
 
 // 2 Esta funcion nos permitira calcular el costo de instalacion mediante condicionales
 
-const calcularInstalacion = (totalPedido) => { 
-    let cantidadMinisplits = comprobarCantidad(cantidad);
+const calcularInstalacion = (precioInstalacion) => { 
+    let cantidadMinisplits = comprobarCantidad(cantidad++);
     let costoInstalacion = 0;
     let preguntaInstalacion = confirm("¿Necesitas servicio de instalacion?"); // 2.1 Aqui le preguntaremos al usuario si quiere envio y ese valor se aloja en la variante solicitaEnvio como true si da OK
     
     if (preguntaInstalacion && cantidadMinisplits >= 5) { // Si la cantidad final de los equipos es igual o mayor a 5 se multiplicara cantidad por 550
         costoInstalacion = cantidadMinisplits*550;
-        alert("El costo de instalacion total es $"+costoInstalacion+" El total de tu compra es $"+(costoInstalacion+totalPedido));
+        alert("El costo de instalacion total es $"+costoInstalacion+" El total de tu compra es $"+(costoInstalacion+precioInstalacion));
     } else if (preguntaInstalacion && cantidadMinisplits <= 4 && cantidadMinisplits !== 0) { // Si la cantidad final de los equipos es igual o menor a 4 se multiplicara cantidad por 1100
         costoInstalacion = cantidad*1100;
-        alert("El costo de instalacion total es $"+costoInstalacion+" El total de tu compra es $"+(costoInstalacion+totalPedido));
+        alert("El costo de instalacion total es $"+costoInstalacion+" El total de tu compra es $"+(costoInstalacion+precioInstalacion));
     } else { // No se cobra instalacionf
-        alert("No se cobrara servicio de instalación. El total de tu compra es $"+(costoInstalacion+totalPedido));
+        alert("No se cobrara servicio de instalación. El total de tu compra es $"+(costoInstalacion+precioInstalacion));
     }
-    return totalPedido;
+    return precioInstalacion;
 
     // 3 Esta funcion nos permitira calcular el costo de envio y arrojar final total
 
 }
 
-function calcularEnvio(totalPedido) {
+function calcularEnvio(precioEnvio) {
     let solicitaEnvioADomicilio = false;
 
     solicitaEnvioADomicilio = confirm("¿Necesitas envio a domicilio?");
 
-    if (solicitaEnvioADomicilio && totalPedido >= 12000) {
+    if (solicitaEnvioADomicilio && precioEnvio >= 12000) {
         alert("¡Tu compra cuenta con envio gratis y llegara a tu domicilio en 3 dias! ¡Gracias por tu preferencia!");
-    } else if (solicitaEnvioADomicilio && totalPedido <= 11999) {
-        totalPedido += 850;
+    } else if (solicitaEnvioADomicilio && precioEnvio <= 11999) {
+        precioEnvio += 850;
         alert("El costo de envio es de $850 pagados a contraentrega y llegara a tu domicilio en 3 dias ¡Gracias por tu preferncia!");
     } else {
         alert("El pedido sera recogido en sucursal a partir de mañana. ¡Gracias por tu preferncia");
     }
 
-    return totalPedido;
+    return precioEnvio;
 }
 
 ///---------------------- Invocacion de funciones
