@@ -67,7 +67,7 @@ const comprobarCantidad = (cantidad) => { //El cantidad de aqui es un parametro
 // 2 Esta funcion nos permitira calcular el costo de instalacion mediante condicionales
 
 const calcularInstalacion = (precioInstalacion) => { 
-    let cantidadMinisplits = comprobarCantidad(cantidad++);
+    let cantidadMinisplits = comprobarCantidad(cantidad);
     let costoInstalacion = 0;
     let preguntaInstalacion = confirm("¿Necesitas servicio de instalacion?"); // 2.1 Aqui le preguntaremos al usuario si quiere envio y ese valor se aloja en la variante solicitaEnvio como true si da OK
     
