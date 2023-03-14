@@ -105,4 +105,3 @@ function calcularEnvio(precioEnvio) {
 
 ///---------------------- Invocacion de funciones
 
-comprarEquipos(); // Aqui estoy llamando  la funcion de comprar para que se ejectue

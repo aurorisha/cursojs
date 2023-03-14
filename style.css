@@ -59,3 +59,19 @@ th {
     color: white;
     height: 15%;
 }
+
+button {
+    width: 150px;
+    margin: 0 0 20px 0;
+    font-weight: 600;
+    font-size: 1.5rem;
+    height: 50;
+    border-radius: 25px;
+    background-color: aqua;
+    color: blue ;
+}
+
+button:hover {
+    background-color: rgb(55, 0, 255);
+    color: rgb(255, 255, 255) ;
+}
